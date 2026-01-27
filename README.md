@@ -1,7 +1,140 @@
 # AEM steps
+🔹 AEM Setup (Headless CMS)
+
+This project uses Adobe Experience Manager (AEM 6.5) in a pure headless architecture, where AEM acts only as a content repository and API provider.
+
+1. Prerequisites
+
+Adobe Experience Manager 6.5
+
+AEM Author instance running locally
+
+http://localhost:4502
 
 
+Java 8 / 11 (as required by AEM 6.5)
 
+Admin access to AEM
+
+2. Content Fragment Model
+
+Create a Content Fragment Model for the homepage hero section.
+
+Path:
+
+Tools → Assets → Content Fragment Models
+
+
+Model Name: Homepage Hero
+
+Fields:
+
+title – Single Line Text
+
+subtitle – Multi Line Text
+
+ctaText – Single Line Text
+
+ctaLink – Single Line Text
+
+Save and activate the model.
+
+3. Content Fragment Creation
+
+Navigate to:
+
+Assets → Files → /content/dam/fauna/homepage
+
+
+Create a Content Fragment using the Homepage Hero model
+
+Name it:
+
+homepage-hero
+
+
+Fill in initial content and save
+
+4. GraphQL Endpoint Configuration
+
+Go to:
+
+Tools → Assets → GraphQL
+
+
+Create a GraphQL endpoint:
+
+Name: global
+
+
+Associate it with the DAM root or /fauna folder
+
+Publish the endpoint
+
+5. Verify GraphQL Data
+
+Open GraphiQL Explorer:
+
+http://localhost:4502/aem/graphiql.html
+
+
+Example query:
+
+query {
+  faunaHeroList {
+    items {
+      title
+      subtitle
+      ctaText
+      ctaLink
+    }
+  }
+}
+
+
+Ensure valid JSON is returned.
+
+6. Enable Content Updates from Frontend
+
+The frontend updates AEM Content Fragments using REST APIs.
+
+Target node:
+
+/content/dam/fauna/homepage/homepage-hero/jcr:content/data/master
+
+
+Method:
+
+POST
+
+
+Content-Type:
+
+application/x-www-form-urlencoded
+
+
+This enables inline frontend edits to persist directly in AEM.
+
+7. AEM Responsibility in This Project
+
+Content modeling
+
+Content storage (DAM)
+
+GraphQL API exposure
+
+Enterprise content governance
+
+AEM does not handle page rendering or templates.
+
+8. Content Flow
+AEM Content Fragment → GraphQL → Next.js
+Next.js Inline Edit → REST API → AEM
+
+
+AEM remains the single source of truth.
+
+✅ AEM setup complete. Proceed to Next.js frontend setup below
 
 
 # Fauna - Next.js Template
