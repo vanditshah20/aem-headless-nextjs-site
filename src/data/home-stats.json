@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "value": "5,000 Mwh",
+    "label": "Renewable Energy Generated"
+  },
+  {
+    "id": 2,
+    "value": "2,500+",
+    "label": "Happy Customers"
+  },
+  {
+    "id": 3,
+    "value": "10,000+",
+    "label": "Solar Panels Installed"
+  },
+  {
+    "id": 4,
+    "value": "15%",
+    "label": "CO2 Reduction Achieved"
+  }
+]

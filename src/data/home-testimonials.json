@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "quote": "Flow transformed my energy use. Efficient, green tech, outstanding service!",
+    "name": "Jenny Wilson",
+    "role": "Solar energy service",
+    "image": "/images/testimonial-photo-lg.png"
+  },
+  {
+    "id": 2,
+    "quote": "Efficient, green tech, outstanding service",
+    "name": "John Jones",
+    "role": "CE0 Solar Company",
+    "image": "/images/testimonial-photo-lg.png"
+  },
+  {
+    "id": 3,
+    "quote": "Flow transformed my energy use, efficient, green tech, outstanding service.",
+    "name": "James Harrison",
+    "role": "Developer",
+    "image": "/images/testimonial-photo-lg.png"
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "plans": [
+    {
+      "id": 1,
+      "name": "Basic",
+      "price": "$59",
+      "description": "For small households or businesses with moderate energy consumption",
+      "recommended": false
+    },
+    {
+      "id": 2,
+      "name": "Premium",
+      "price": "$129",
+      "description": "For small households or businesses with moderate energy consumption",
+      "recommended": true
+    },
+    {
+      "id": 3,
+      "name": "Enterprise",
+      "price": "Custom",
+      "description": "Tailored for businesses with significant energy demands",
+      "recommended": false
+    }
+  ],
+  "features": [
+    {
+      "category": "Support",
+      "items": [
+        {
+          "name": "Installation Fee",
+          "values": ["$119", "No Installation Fee", "No Installation Fee"]
+        },
+        {
+          "name": "Satisfaction Guarantee",
+          "values": [true, true, true]
+        },
+        {
+          "name": "24/7 Customer Support",
+          "values": [false, true, true]
+        },
+        {
+          "name": "Smart Energy Monitoring",
+          "values": [false, true, true]
+        }
+      ]
+    },
+    {
+      "category": "Energy Supply",
+      "items": [
+        {
+          "name": "Renewable Energy Sources",
+          "values": ["50%", "75%", "90%"]
+        },
+        {
+          "name": "Carbon Offsetting",
+          "values": ["1.5 metric tons CO2e", "5 metric tons CO2e", "Custom"]
+        },
+        {
+          "name": "Energy Consumption Limit",
+          "values": ["500 kWh", "1,000 kWh", "Custom"]
+        }
+      ]
+    }
+  ]
+}
