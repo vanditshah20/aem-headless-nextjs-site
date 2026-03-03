@@ -12,8 +12,8 @@ import { Icon } from './';
  * @param {boolean} [props.showLogo=true] - Whether to display logo
  * @param {boolean} [props.showCta=true] - Whether to display CTA button
  * @param {Object} [props.hero] - Hero section configuration for hero variant
- * @param {string} [props.hero.title] - Hero title
- * @param {string} [props.hero.subtitle] - Hero subtitle
+ * @param {React.ReactNode} [props.hero.title] - Hero title (can be string or JSX)
+ * @param {React.ReactNode} [props.hero.subtitle] - Hero subtitle (can be string or JSX)
  * @param {string} [props.hero.ctaText] - Hero CTA text
  * @param {string} [props.hero.ctaLink] - Hero CTA link
  * @param {string} [props.backgroundImage] - Background image for hero variant

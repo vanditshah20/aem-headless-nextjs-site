@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { Navigation } from '@/components/ui';
 import InlineEditableText from '@/components/editor/InlineEditableText';
 
+// hero information fetched from AEM; always strings in our data layer
+
 type Hero = {
   title: string;
   subtitle: string;
