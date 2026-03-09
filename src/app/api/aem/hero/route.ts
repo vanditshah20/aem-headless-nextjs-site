@@ -13,13 +13,18 @@ export async function POST(req: Request) {
       );
     }
 
+    const AEM_BASE_URL = process.env.AEM_BASE_URL || 'http://localhost:4502';
     const AEM_ENDPOINT =
-      'http://localhost:4502/content/dam/fauna/homepage/homepage-hero/jcr:content/data/master';
+      `${AEM_BASE_URL}/content/dam/fauna/homepage/homepage-hero/jcr:content/data/master`;
 
-    const auth = Buffer.from('admin:admin').toString('base64');
+    const AEM_AUTH_HEADER =
+      process.env.AEM_AUTH_HEADER ||
+      `Basic ${Buffer.from(process.env.AEM_CREDENTIALS || 'admin:admin').toString('base64')}`;
 
     // 🔑 Sling POST format
     const formBody = new URLSearchParams();
+
+    const authorization = AEM_AUTH_HEADER;
 
     if (title) {
       formBody.append('./title', title);
@@ -33,7 +38,7 @@ export async function POST(req: Request) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        Authorization: `Basic ${auth}`,
+        Authorization: authorization,
       },
       body: formBody.toString(),
     });

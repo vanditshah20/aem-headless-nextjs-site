@@ -1,7 +1,10 @@
 const AEM_GRAPHQL_ENDPOINT =
-  'http://localhost:4502/content/cq:graphql/global/endpoint.json';
+  process.env.AEM_GRAPHQL_ENDPOINT ||
+  `${process.env.AEM_BASE_URL || 'http://localhost:4502'}/content/cq:graphql/global/endpoint.json`;
 
-const AEM_AUTH = Buffer.from('admin:admin').toString('base64');
+const AEM_AUTH_HEADER =
+  process.env.AEM_AUTH_HEADER ||
+  `Basic ${Buffer.from(process.env.AEM_CREDENTIALS || 'admin:admin').toString('base64')}`;
 
 export async function fetchHeroFromAEM() {
   const query = `
@@ -22,7 +25,7 @@ export async function fetchHeroFromAEM() {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
-      Authorization: `Basic ${AEM_AUTH}`,
+      Authorization: AEM_AUTH_HEADER,
     },
     body: JSON.stringify({ query }),
     cache: 'no-store',
